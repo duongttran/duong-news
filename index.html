@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Duong's News</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="inner-nav">
+            <h1>Duong's news</h1>
+            <p>Total news cards: <span id="noOfNews"></span> </p>
+            <button onclick="loadMore()">Load more news</button>
+            <div class="dropdownList">
+                <label for="cars">Choose a news category:</label>
+
+                <select id="newsCategory" onchange="changeNewsCategory()"> 
+                  <option value="vietnam">Vietnam</option>
+                  <option value="corona">Corona</option>
+                  <option value="bitcoin">Bitcoin</option>
+                </select>
+
+                <p id="displayNewsCategory"></p>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <p>Source news:
+            <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a>
+        </p>
+        <div id="newsArea">
+            <div id="news">
+                <div id="contentsArea">
+                    <div id="imgArea">
+                        <img src="https://ca-times.brightspotcdn.com/dims4/default/70ec3d8/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5e%2F4b%2F1aeeb2d57d763d89c9da42b0e48b%2Fla-pol-sac-california-gun-control-gavin-newsom-001">
+                    </div>
+                    <h3 id="title">
+                        Justice Department warns California coronavirus rules may violate religious freedoms
+                    </h3>
+                    <div id="source">LA Times</div>
+                    <div id="publishedAt">Yesterday</div>
+                    <a href="#">Read more</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+</body>
+
+
+</html>
