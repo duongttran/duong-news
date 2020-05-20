@@ -16,10 +16,9 @@
     <div class="navigation">
         <div class="inner-nav">
             <h1>Duong's news</h1>
-            <p>Total news cards: <span id="noOfNews"></span> </p>
-            <button onclick="loadMore()">Load more news</button>
+            <h3>Total news cards: <span id="noOfNews"></span> </h3>
             <div class="dropdownList">
-                <label for="cars">Choose a news category:</label>
+                <label for="cars">Choose a news category</label>
 
                 <select id="newsCategory" onchange="changeNewsCategory()"> 
                   <option value="vietnam">Vietnam</option>
@@ -27,11 +26,15 @@
                   <option value="bitcoin">Bitcoin</option>
                 </select>
 
-                <p id="displayNewsCategory"></p>
+
             </div>
+            <button onclick="loadMore()">Load more news</button>
+
         </div>
     </div>
     <div class="main-section">
+        <h2>Current news category: <span id="displayNewsCategory"></span>
+        </h2>
         <p>Source news:
             <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a>
         </p>

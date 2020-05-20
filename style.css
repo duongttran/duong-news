@@ -40,9 +40,14 @@ button:hover {
 
 .main-section {
     margin: 0 auto;
-    background-color: #f0f0f0;
-    margin-top: 90px;
+    background-color: #f5f5f5;
+    padding-top: 120px;
     /* width: 1200px; */
+    transition: 0.5s;
+}
+
+.main-section h2 {
+    text-align: center;
 }
 
 .main-section p {
@@ -92,4 +97,14 @@ button:hover {
 
 #imgArea img {
     max-width: 300px;
+}
+
+
+/* #containArea div {
+    padding: 50px 0;
+} */
+
+select {
+    font-size: 14px;
+    width: 150px;
 }

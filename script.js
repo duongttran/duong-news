@@ -1,38 +1,40 @@
 let newsList = [];
 let page = 1;
 let defaultImage = 'img/default-img.jpg';
-let category = 'corona';
+let category = 'vietnam';
 
 const apiKey = "a037dc639f444558a7383916f4a0eeb7";
 
-const loadNews = async() => {
+const loadNews = async(status) => {
     let url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&from=2020-05-20&apiKey=${apiKey}`;
 
     let data = await fetch(url);
     let result = await data.json();
 
-    let dataList = result.articles;
-    newsList = newsList.concat(dataList);
-    //console.log("what we get here", result);
-    render(newsList);
 
-    // if (category != "vietnam") {
-    //     newsList = result.articles;
-    //     render(newsList);
-    // } else {
 
-    // }
+    if (status === 'firstload' || status === 'keyword') {
+        newsList = result.articles;
+        render(newsList);
+    } else if (status === 'loadmore') {
+        let dataList = result.articles;
+        newsList = newsList.concat(dataList);
+        //console.log("what we get here", result);
+        render(newsList);
+    }
 
 
 }
 
-let newsType = document.getElementById("newsCategory").value;
+//let newsType = document.getElementById("newsCategory").value;
 
 function changeNewsCategory() {
-    newsType = document.getElementById("newsCategory").value;
+    let newsType = document.getElementById("newsCategory").value;
     category = newsType;
+    document.getElementById("displayNewsCategory").innerHTML = `${newsType}`
+
     console.log(category);
-    //loadNews();
+    loadNews('keyword');
 }
 
 const render = (list) => {
@@ -60,10 +62,10 @@ const render = (list) => {
 
 function loadMore() {
     page++;
-    loadNews();
+    loadNews('loadmore');
 }
 
-loadNews();
+loadNews('firstload');
 
 let returnImg = (imgLink) => {
     if (imgLink == null) {
