@@ -42,6 +42,10 @@ const render = (list) => {
     document.getElementById("noOfNews").innerHTML = list.length;
 
     let newsHtml = list.map(item => `<div id="news">
+    <div class="bar">
+        <div class="emptybar"></div>
+        <div class="fillbar"></div>
+    </div>
     <div id="contentsArea">
     <div id="imgArea">
   

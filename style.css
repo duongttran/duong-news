@@ -10,11 +10,18 @@ body {
     width: 100%;
     top: 0;
     box-shadow: 5px 5px 10px rgb(212, 212, 212);
+    z-index: 4;
 }
 
 a {
-    color: rgb(0, 162, 255);
+    color: #00a2ff;
     text-decoration: none;
+    transition: .5s;
+}
+
+a:hover {
+    color: #00eeff;
+    transition: .5s;
 }
 
 .inner-nav {
@@ -30,12 +37,14 @@ button {
     border-radius: 5px;
     padding: 15px;
     font-size: 14px;
-    transition: 0.5s;
+    /* transition: 0.5s; */
+    transition: 0.5s ease-out;
 }
 
 button:hover {
     background-color: #00eeff;
-    transition: 0.5s;
+    /* background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);*/
+    transition: 0.5s ease-out;
 }
 
 .main-section {
@@ -67,12 +76,13 @@ button:hover {
     border: 1px solid rgb(230, 230, 230);
     border-radius: 5px;
     justify-content: space-between;
-    padding: 20px;
+    padding: 25px 20px;
     width: 300px;
     margin: 20px;
     background-color: white;
     box-shadow: 5px 5px 10px rgb(212, 212, 212);
     transition: 0.5s;
+    position: relative;
 }
 
 #news:nth-last-child() {
@@ -80,7 +90,7 @@ button:hover {
 }
 
 #news:hover {
-    box-shadow: 10px 10px 10px rgb(163, 163, 163);
+    box-shadow: 10px 10px 10px rgb(138, 138, 138);
     transition: 0.5s;
 }
 
@@ -99,6 +109,39 @@ button:hover {
     max-width: 300px;
 }
 
+.bar {
+    margin-left: -20px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    height: 5px;
+    width: 340px;
+}
+
+.emptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.fillbar {
+    border-radius: 5px 5px 0px 0px;
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background-color: rgb(0, 154, 217);
+    background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);
+    transition: 0.5s ease-out;
+}
+
+#news:hover .fillbar {
+    width: 340px;
+    transition: 0.4s ease-out;
+}
+
 
 /* #containArea div {
     padding: 50px 0;
@@ -107,4 +150,24 @@ button:hover {
 select {
     font-size: 14px;
     width: 150px;
+}
+
+@media(max-width:850px) {
+    .navigation {
+        height: 110px;
+    }
+    .inner-nav {
+        padding: 10px;
+    }
+    .inner-nav h1 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .inner-nav h2 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .inner-nav button {
+        max-width: 60px;
+    }
 }
