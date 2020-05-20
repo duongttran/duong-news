@@ -32,7 +32,7 @@ function changeNewsCategory() {
     newsType = document.getElementById("newsCategory").value;
     category = newsType;
     console.log(category);
-    loadNews();
+    //loadNews();
 }
 
 const render = (list) => {
