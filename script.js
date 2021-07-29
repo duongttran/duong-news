@@ -6,7 +6,7 @@ let category = 'vietnam';
 const apiKey = "a037dc639f444558a7383916f4a0eeb7";
 
 const loadNews = async(status) => {
-    let url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&from=2020-05-20&apiKey=${apiKey}`;
+    let url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&apiKey=${apiKey}`;
 
     let data = await fetch(url);
     let result = await data.json();
